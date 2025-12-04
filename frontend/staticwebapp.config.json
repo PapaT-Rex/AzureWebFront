@@ -1,0 +1,17 @@
+
+{
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/api/*", "/static/*"]
+  },
+  "routes": [
+    { "route": "/admin", "allowedRoles": ["admin"] },
+    { "route": "/admin/*", "allowedRoles": ["admin"] }
+  ],
+  "responseOverrides": {
+    "401": { "rewrite": "/auth/login", "statusCode": 401 }
+  },
+  "globalHeaders": {
+    "X-Frame-Options": "DENY"
+  }
+}
